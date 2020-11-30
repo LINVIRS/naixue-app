@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "修改地址",
+  "navigationBarBackgroundColor": "#F8F8F8",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "list-cell": "/components/list-cell/list-cell"
+  }
+}

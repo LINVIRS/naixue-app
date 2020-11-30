@@ -134,7 +134,7 @@
 					</view>
 					<view>我的资料</view>
 				</view>
-				<view class="grid">
+				<view class="grid" @click="address">
 					<view class="image">
 						<image src="/static/images/mine/shdz.png"></image>
 					</view>
@@ -180,7 +180,13 @@
 				uni.navigateTo({
 					url: '../login/login'
 				});
+			},
+			address(){
+				uni.navigateTo({
+					url: '../address/address'
+				});
 			}
+			
 		}
 	};
 </script>

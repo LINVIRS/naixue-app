@@ -312,6 +312,11 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
       uni.navigateTo({
         url: '../login/login' });
 
+    },
+    address: function address() {
+      uni.navigateTo({
+        url: '../address/address' });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
