@@ -262,7 +262,7 @@
 			},
 			goToRemark() {
 				uni.navigateTo({
-					url: '../remark/remark?remark=' + this.form.rermark
+					url: '../remark/remark?remark=' + this.form.remark
 				});
 			},
 			submit() {
@@ -344,7 +344,7 @@
 			pay() {
 				uni.removeStorage('cart');
 				uni.reLaunch({
-					url: "/pages/take-foods/take-foods?order_id=" + ''
+					url: "/pages/take-foods/take-foods?order_id=" + '1606750097b388e1e1'
 				});
 			}
 		}
