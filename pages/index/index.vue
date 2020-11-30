@@ -11,11 +11,11 @@
 		<view class="content">
 			<!-- 点餐入口 -->
 			<view class="entrance">
-				<view class="item" @click="ziqu()">
+				<view class="item" @tap="takein">
 					<image src="../../static/images/index/zq.png" class="icon"></image>
 					<text class="title">自取</text>
 				</view>
-				<view class="item">
+				<view class="item" @tap="takeout">
 					<image src="../../static/images/index/wm.png" class="icon"></image>
 					<text class="title">外卖</text>
 				</view>
@@ -94,11 +94,34 @@ export default {
 	},
 	onLoad() {},
 	methods: {
-		ziqu() {
-			uni.navigateTo({
-				url: '../stores/stores'
-			});
-		}
+			//自取
+				takein() {
+					//如果没有选中门店, 就跳转到门店页面让用户选择, 注意判断条件写法（choseStore是个对象）
+					if(JSON.stringify(this.chooseStore) === '{}') {
+						uni.navigateTo({
+							url: '../stores/stores'
+						});
+					}
+					//提交订单类型为“自取”，跳转到点餐页面
+					this.$store.commit('SET_ORDERTYPE', "takein");
+					uni.switchTab({
+						url: '../menu/menu'
+					})
+				},
+				//外卖
+				takeout() {
+					///未登录跳转到登录页
+					if(!this.isLogin) {
+						uni.navigateTo({
+							url: '/pages/login/login'
+						})
+					} else {
+						// 已登录
+						uni.navigateTo({
+							url: '/pages/address/address?is_choose=true'
+						});
+					}
+				}
 	}
 };
 </script>

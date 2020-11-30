@@ -233,10 +233,33 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumera
 
   onLoad: function onLoad() {},
   methods: {
-    ziqu: function ziqu() {
-      uni.navigateTo({
-        url: '../stores/stores' });
+    //自取
+    takein: function takein() {
+      //如果没有选中门店, 就跳转到门店页面让用户选择, 注意判断条件写法（choseStore是个对象）
+      if (JSON.stringify(this.chooseStore) === '{}') {
+        uni.navigateTo({
+          url: '../stores/stores' });
 
+      }
+      //提交订单类型为“自取”，跳转到点餐页面
+      this.$store.commit('SET_ORDERTYPE', "takein");
+      uni.switchTab({
+        url: '../menu/menu' });
+
+    },
+    //外卖
+    takeout: function takeout() {
+      ///未登录跳转到登录页
+      if (!this.isLogin) {
+        uni.navigateTo({
+          url: '/pages/login/login' });
+
+      } else {
+        // 已登录
+        uni.navigateTo({
+          url: '/pages/address/address?is_choose=true' });
+
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
