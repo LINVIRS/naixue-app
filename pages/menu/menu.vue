@@ -11,22 +11,14 @@
 							<view class="iconfont icon-arrow-right"></view>
 						</view>
 						<view class="store-location">
-							<image
-								src="/static/images/order/location.png"
-								style="width: 30rpx; height: 30rpx;"
-								class="mr-10"
-							></image>
+							<image src="/static/images/order/location.png" style="width: 30rpx; height: 30rpx;" class="mr-10"></image>
 							<text v-if="choseStore.distance">距离您{{ choseStore.distance }}km</text>
 							<text v-else>请选择您附近门店</text>
 						</view>
 					</view>
 					<view class="left overflow-hidden" v-else>
 						<view class="d-flex align-items-center overflow-hidden">
-							<image
-								src="/static/images/order/location.png"
-								style="width: 30rpx; height: 30rpx;"
-								class="mr-10"
-							></image>
+							<image src="/static/images/order/location.png" style="width: 30rpx; height: 30rpx;" class="mr-10"></image>
 							<view class="font-size-extra-lg text-color-base font-weight-bold text-truncate">
 								<text>{{ choseAddress.street }}</text>
 							</view>
@@ -38,12 +30,8 @@
 						</view>
 					</view>
 					<view class="right">
-						<view class="dinein" :class="{ active: orderType == 'takein' }" @tap="tapTakein">
-							<text>自取</text>
-						</view>
-						<view class="takeout" :class="{ active: orderType == 'takeout' }" @tap="tapTakeOut">
-							<text>外卖</text>
-						</view>
+						<view class="dinein" :class="{ active: orderType == 'takein' }" @tap="tapTakein"><text>自取</text></view>
+						<view class="takeout" :class="{ active: orderType == 'takeout' }" @tap="tapTakeOut"><text>外卖</text></view>
 					</view>
 				</view>
 				<!-- 优惠信息 -->
@@ -71,25 +59,10 @@
 					</view>
 				</scroll-view>
 				<!-- right goods -->
-				<scroll-view
-					scroll-y="true"
-					class="goods"
-					scroll-with-animation
-					:scroll-top="cateScrollTop"
-					@scroll="handleGoodsScroll"
-				>
+				<scroll-view scroll-y="true" class="goods" scroll-with-animation :scroll-top="cateScrollTop" @scroll="handleGoodsScroll">
 					<view class="wrapper">
-						<swiper
-							class="ads"
-							id="ads"
-							:indicator-dots="true"
-							:autoplay="true"
-							:interval="3000"
-							indicator-dots
-						>
-							<swiper-item v-for="(item, index) in ads" :key="index">
-								<image :src="item.image"></image>
-							</swiper-item>
+						<swiper class="ads" id="ads" :indicator-dots="true" :autoplay="true" :interval="3000" indicator-dots>
+							<swiper-item v-for="(item, index) in ads" :key="index"><image :src="item.image"></image></swiper-item>
 						</swiper>
 						<!-- goods-list -->
 						<view class="list">
@@ -107,18 +80,10 @@
 											<view class="price_and_action">
 												<text class="price">￥{{ good.price }}</text>
 												<view class="btn-group" v-if="good.property">
-													<button
-														type="primary"
-														class="btn property_btn"
-														hover-class="none"
-														size="mini"
-														@tap="showGoodDetailModal(item, good)"
-													>
+													<button type="primary" class="btn property_btn" hover-class="none" size="mini" @tap="showGoodDetailModal(item, good)">
 														选规格
 													</button>
-													<view class="dot" v-show="goodCartNum(good._id)">
-														{{ goodCartNum(good._id) }}
-													</view>
+													<view class="dot" v-show="goodCartNum(good._id)">{{ goodCartNum(good._id) }}</view>
 												</view>
 												<!-- 购物车加减 -->
 												<view class="btn-group" v-else>
@@ -133,16 +98,8 @@
 													>
 														<view class="iconfont icon-sami-select"></view>
 													</button>
-													<view class="number" v-show="goodCartNum(good._id)">
-														{{ goodCartNum(good._id) }}
-													</view>
-													<button
-														type="primary"
-														class="btn add_btn"
-														size="min"
-														hover-class="none"
-														@tap="handleAddToCart(item, good, 1)"
-													>
+													<view class="number" v-show="goodCartNum(good._id)">{{ goodCartNum(good._id) }}</view>
+													<button type="primary" class="btn add_btn" size="min" hover-class="none" @tap="handleAddToCart(item, good, 1)">
 														<view class="iconfont icon-add-select"></view>
 													</button>
 												</view>
@@ -166,22 +123,12 @@
 				<!-- 商品价格 -->
 				<view class="price">￥{{ getCartGoodsPrice }}</view>
 				<!-- 结算按钮 -->
-				<button type="primary" class="pay-btn" :disabled="disabledPay" @tap="topay">
-					{{ disabledPay ? `差${spread}元起送` : '去结算' }}
-				</button>
+				<button type="primary" class="pay-btn" :disabled="disabledPay" @tap="topay">{{ disabledPay ? `差${spread}元起送` : '去结算' }}</button>
 			</view>
 		</view>
 		<!-- main end -->
 		<!-- modal开始 -->
-		<modal
-			:show="goodDetailModalVisible"
-			class="good-detail-modal"
-			color="#5A5B5C"
-			width="90%"
-			custom
-			padding="0rpx"
-			radius="12rpx"
-		>
+		<modal :show="goodDetailModalVisible" class="good-detail-modal" color="#5A5B5C" width="90%" custom padding="0rpx" radius="12rpx">
 			<view class="cover">
 				<image v-if="good.images" :src="good.images" class="image"></image>
 				<view class="btn-group">
@@ -202,13 +149,7 @@
 								<view class="desc" v-if="item.desc">({{ item.desc }})</view>
 							</view>
 							<view class="values">
-								<view
-									class="value"
-									v-for="(value, key) in item.values"
-									:key="key"
-									:class="{ default: value.is_default }"
-									@tap="changePropertyDefault(index, key)"
-								>
+								<view class="value" v-for="(value, key) in item.values" :key="key" :class="{ default: value.is_default }" @tap="changePropertyDefault(index, key)">
 									{{ value.value }}
 								</view>
 							</view>
@@ -222,13 +163,9 @@
 					<view class="props" v-if="getGoodSelectedProps(good)">{{ getGoodSelectedProps(good) }}</view>
 				</view>
 				<view class="btn-group">
-					<button type="default" plain class="btn" size="mini" hover-class="none" @tap="handlePropertyReduce">
-						<view class="iconfont icon-sami-select"></view>
-					</button>
+					<button type="default" plain class="btn" size="mini" hover-class="none" @tap="handlePropertyReduce"><view class="iconfont icon-sami-select"></view></button>
 					<view class="number">{{ good.number }}</view>
-					<button type="primary" class="btn" size="min" hover-class="none" @tap="handlePropertyAdd">
-						<view class="iconfont icon-add-select"></view>
-					</button>
+					<button type="primary" class="btn" size="min" hover-class="none" @tap="handlePropertyAdd"><view class="iconfont icon-add-select"></view></button>
 				</view>
 			</view>
 			<view class="add-to-cart-btn" @tap="handleAddToCartInModal"><view>加入购物车</view></view>
@@ -248,24 +185,11 @@
 								<text>￥{{ item.price }}</text>
 							</view>
 							<view class="right">
-								<button
-									type="default"
-									plain
-									size="mini"
-									class="btn"
-									hover-class="none"
-									@tap="handleCartItemReduce(index)"
-								>
+								<button type="default" plain size="mini" class="btn" hover-class="none" @tap="handleCartItemReduce(index)">
 									<view class="iconfont icon-sami-select"></view>
 								</button>
 								<view class="number">{{ item.number }}</view>
-								<button
-									type="primary"
-									class="btn"
-									size="min"
-									hover-class="none"
-									@tap="handleCartItemAdd(index)"
-								>
+								<button type="primary" class="btn" size="min" hover-class="none" @tap="handleCartItemAdd(index)">
 									<view class="iconfont icon-add-select"></view>
 								</button>
 							</view>
@@ -274,13 +198,9 @@
 							<view class="left"><view class="name">配送费</view></view>
 							<view class="center"><text>￥3</text></view>
 							<view class="right invisible">
-								<button type="default" plain size="mini" class="btn" hover-class="none">
-									<view class="iconfont icon-sami-select"></view>
-								</button>
+								<button type="default" plain size="mini" class="btn" hover-class="none"><view class="iconfont icon-sami-select"></view></button>
 								<view class="number">1</view>
-								<button type="primary" class="btn" size="min" hover-class="none">
-									<view class="iconfont icon-add-select"></view>
-								</button>
+								<button type="primary" class="btn" size="min" hover-class="none"><view class="iconfont icon-add-select"></view></button>
 							</view>
 						</view>
 					</view>
@@ -395,7 +315,7 @@ export default {
 			});
 		},
 		init() {
-			if (Object.keys(this.choseStore).length == 0 && this.orderType == 'takein') {
+			if (Object.keys(this.choseStore).length == 0) {
 				uni.navigateTo({
 					url: '../stores/stores'
 				});
@@ -553,9 +473,60 @@ export default {
 				});
 				return;
 			}
-			uni.navigateTo({
-				url: '../pay/pay?total=' + this.getCartGoodsPrice
+			uni.showLoading({
+				title: '加载中'
 			});
+			return uniCloud
+				.callFunction({
+					name: 'validateToken',
+					data: {
+						token: uni.getStorageSync('token')
+					}
+				})
+				.then(res => {
+					if (res.result.status === 0) {
+						uni.hideLoading();
+						if (this.orderType == 'takein') {
+							let data = {
+								openId: res.result.openId,
+								goodsInOrder: this.cart,
+								chooseStore: this.choseStore.name
+							};
+							return uniCloud.callFunction({
+								name: 'order',
+								data: {
+									data: data,
+									action: 'addTakein'
+								}
+							});
+						} else if (this.orderType == 'takeout') {
+							let data = {
+								openId: res.result.openId,
+								goodsInOrder: this.cart,
+								chooseStore: this.choseAddress.storeName,
+								order_address: this.choseAddress._id
+							};
+							return uniCloud.callFunction({
+								name: 'order',
+								data: {
+									data: data,
+									action: 'addTakeout'
+								}
+							});
+						}
+					} else {
+						uni.hideLoading();
+						uni.showModal({
+							content: res.result.msg,
+							showCancel: false
+						});
+					}
+				})
+				.then(resData => {
+					uni.navigateTo({
+						url: '../pay/pay?order_id=' + resData.result.order_id
+					});
+				});
 		}
 	}
 };
