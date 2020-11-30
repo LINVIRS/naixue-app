@@ -62,7 +62,11 @@
             "urlCheck" : false
         },
         "usingComponents" : true,
-        "permission" : {},
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "查找附近门店"
+            }
+        },
         "uniStatistics" : {
             "enable" : false
         }

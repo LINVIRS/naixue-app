@@ -42,7 +42,7 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
-  color: #FFFFFF;
+  color: #ffffff;
   top: calc(50rpx + 25px);
   left: 40rpx;
 }
@@ -61,7 +61,7 @@
   margin-top: -80rpx;
   margin-bottom: 30rpx;
   border-radius: 10rpx;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 0 20rpx 20rpx -20rpx rgba(51, 51, 51, 0.1);
   display: -webkit-box;
   display: -webkit-flex;
@@ -117,7 +117,7 @@
   position: relative;
   margin-bottom: 30rpx;
   border-radius: 10rpx;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 0 20rpx 20rpx -20rpx rgba(51, 51, 51, 0.1);
   padding: 30rpx;
   display: -webkit-box;
@@ -197,7 +197,7 @@
 .content .navigators {
   margin-bottom: 20rpx;
   border-radius: 10rpx;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 0 20rpx 20rpx -20rpx rgba(51, 51, 51, 0.1);
   padding: 20rpx;
   display: -webkit-box;
@@ -337,6 +337,6 @@
   width: 100%;
   top: -70rpx;
   left: 16rpx;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
