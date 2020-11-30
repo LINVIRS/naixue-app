@@ -2,5 +2,9 @@
   "navigationBarBackgroundColor": "#F8F8F8",
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "奈雪の茶",
-  "usingComponents": {}
+  "usingComponents": {
+    "modal": "/components/modal/modal",
+    "popup-layer": "/components/popup-layer/popup-layer",
+    "model": "/components/modal/modal"
+  }
 }
