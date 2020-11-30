@@ -1967,7 +1967,6 @@ var store = new _vuex.default.Store({
         data: res });
 
     },
-
     SET_ORDERTYPE: function SET_ORDERTYPE(state, type) {
       state.orderType = type;
     },
@@ -1997,7 +1996,7 @@ store;exports.default = _default;
 
 /***/ }),
 
-/***/ 115:
+/***/ 117:
 /*!**********************************************************************!*\
   !*** F:/uniApp/naixue-app/components/uni-swipe-action-item/mpwxs.js ***!
   \**********************************************************************/

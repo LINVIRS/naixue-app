@@ -22,7 +22,6 @@ const store = new Vuex.Store({
 				data: res
 			})
 		},
-
 		SET_ORDERTYPE(state, type) {
 			state.orderType = type
 		},

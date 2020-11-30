@@ -13,14 +13,14 @@
 			</view>
 		</view>
 		<view class="content">
-			<view class="store" v-for="(store, index) in storeData" :key="index" @tap="tapStore">
+			<view class="store" v-for="(store, index) in storeData" :key="index" @tap="tapStore(store)">
 				<view class="store-left">
 					<view class="store-title">
 						<view class="store-name">{{ store.name }}</view>
 						<view class="store-status">营业中</view>
 					</view>
 					<view class="store-content">
-						<view class="store-distance">距离您{{store.distance}}</view>
+						<view class="store-distance">距离您{{store.distance}}km</view>
 						<text class="store-text">{{ store.street }}</text>
 						<text class="store-text">营业时间：10：00-22:30</text>
 					</view>

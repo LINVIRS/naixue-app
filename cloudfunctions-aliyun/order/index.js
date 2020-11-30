@@ -103,7 +103,7 @@ exports.main = async (event, context) => {
 				return res.total
 			})
 			//生成下单时间，从支付完成开始算起
-			const time = getoffsetDate(8)
+			const time = getOffsetDate(8)
 			const nowTime = getNowFormatDate(time)
 			//计算取餐时间 制作订单数量*2分钟
 			const nTime = new Date(time.setMinutes(time.getMinutes() + num * 2))
@@ -195,4 +195,5 @@ exports.main = async (event, context) => {
 		return status
 	}
 };
+
 
